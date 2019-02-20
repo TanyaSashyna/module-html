@@ -23,12 +23,15 @@ body {
     flex-direction: column;
 }
 
-header, footer {
-    flex-shrink: 0;
-}
-
 main {
     flex-grow: 1;
+    padding-top: 73px;
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        padding-top: 99px;
+    }
 }
 
 img {
@@ -73,8 +76,19 @@ button {
 
 /* header */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     padding: 20px 0;
     background: #3f4040;
+}
+
+@media screen and (min-width: 1024px) {
+    header {
+        padding: 30px 0;
+    }
 }
 
 nav {
@@ -123,6 +137,7 @@ nav input[type=checkbox]:checked + .btn-menu .fa-times {
 
 nav input[type=checkbox]:checked + .btn-menu + .menu {
     display: block;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 }
 /*button-menu*/
 
@@ -172,7 +187,6 @@ nav .menu a:active:after {
 nav .menu button {
     padding: 10px 15px;
     color: #fff;
-    font-size: 14px;
     font-weight: 300;
     text-transform: uppercase;
     background: transparent;
@@ -195,7 +209,7 @@ nav .menu button:active {
         right: 0;
         top: 53px;
         padding: 20px;
-        background: #3f4040;
+        background: rgba(63, 64, 64, 0.9);
         border-top: 1px solid #585858;
     }
 
@@ -216,25 +230,109 @@ nav .menu button:active {
 /* header */
 
 /* main */
+.action {
+    padding: 100px 0;
+    background: #3f4040;
+    color: #fff;
+}
+
+.action-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+    .action-wrap h1,
+    .action-wrap p {
+        max-width: 60%;
+        width: 100%;
+    }
+}
+
+.action-wrap h1 {
+    font-size: 48px;
+    font-weight: 300;
+    padding-bottom: 20px;
+}
+
+.action-wrap p {
+    font-size: 18px;
+    line-height: 2;
+    padding-bottom: 40px;
+}
+
+.action-wrap button {
+    padding: 15px 20px;
+    color: #3f4040;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: color .3s, background .3s;
+}
+
+.action-wrap button:hover,
+.action-wrap button:active {
+    color: #fff;
+    background: transparent;
+}
+
+.action-img {
+    display: none;
+}
+
+@media screen and (min-width: 576px) {
+    .action-img {
+        display: block;
+    }
+}
 
 /* main */
 
 /*footer*/
+footer {
+    flex-shrink: 0;
+}
+
 .wrap-footer {
     padding: 30px 0;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-template-rows: min-content min-content;
     grid-template-areas:
-        'a a b c d e'
-        'f f f f f f';
+            'a a a a a a'
+            'f f f f f f';
 }
+footer
+.item-1 {
+    grid-area: a;
+    text-align: center;
+}
+footer .item-2 { grid-area: b }
+footer .item-3 { grid-area: c }
+footer .item-4 { grid-area: d }
+footer .item-5 { grid-area: e }
 
-.item-1 { grid-area: a }
-.item-2 { grid-area: b }
-.item-3 { grid-area: c }
-.item-4 { grid-area: d }
-.item-5 { grid-area: e }
+@media screen and (min-width: 768px) {
+    .wrap-footer {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+                'a a b c d e'
+                'f f f f f f';
+    }
+
+    footer .item-1 {
+        text-align: left;
+    }
+
+    footer p {
+        max-width: 65%;
+        width: 100%;
+    }
+}
 
 footer .logo {
     margin-bottom: 20px;
@@ -242,26 +340,34 @@ footer .logo {
 }
 
 footer p {
-    max-width: 65%;
-    width: 100%;
     color: #ababab;
     line-height: 2;
 }
 
-footer ul li:first-child {
-    padding-bottom: 10px;
-    text-transform: uppercase;
+footer ul {
+    display: none;
 }
 
-footer ul li a {
-    display: block;
-    padding: 10px 0;
-    color: #ababab;
-}
+@media screen and (min-width: 768px) {
+    footer ul {
+        display: block;
+    }
 
-footer ul li a:hover,
-footer ul li a:active {
-    text-decoration: underline;
+    footer ul li:first-child {
+        padding-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    footer ul li a {
+        display: block;
+        padding: 10px 0;
+        color: #ababab;
+    }
+
+    footer ul li a:hover,
+    footer ul li a:active {
+        text-decoration: underline;
+    }
 }
 
 .copyright {
