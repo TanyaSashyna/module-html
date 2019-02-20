@@ -57,6 +57,19 @@ button {
     margin: 0 auto;
 }
 
+/*logo*/
+.logo {
+    display: block;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.logo span {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+/*logo*/
+
 /* header */
 header {
     padding: 20px 0;
@@ -73,16 +86,6 @@ nav a {
     color: #fff;
 }
 
-.logo {
-    display: block;
-    font-size: 24px;
-    font-weight: 300;
-}
-.logo span {
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
 .btn-menu {
     position: relative;
     display: block;
@@ -91,6 +94,7 @@ nav a {
     margin-right: -10px;
     font-size: 24px;
     color: #fff;
+    cursor: pointer;
 }
 
 /*button-menu*/
@@ -173,7 +177,7 @@ nav .menu button {
     background: transparent;
     border: 1px solid #fff;
     cursor: pointer;
-    transition: .3s;
+    transition: color .3s, background .3s;
 }
 
 nav .menu button:hover,
@@ -222,6 +226,18 @@ footer {
     align-items: center;*/
     padding: 16px 0;
     background: #3f4040;
+}
+
+.content-footer {
+
+}
+
+.logo-seo {
+
+}
+
+.logo-seo p {
+    color: #ccc;
 }
 
 /*footer li {
