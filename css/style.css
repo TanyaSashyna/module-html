@@ -72,6 +72,13 @@ button {
     text-transform: uppercase;
     font-weight: 700;
 }
+
+section h2 {
+    font-size: 48px;
+    font-weight: 300;
+    padding-bottom: 20px;
+    text-align: center;
+}
 /*logo*/
 
 /* header */
@@ -80,6 +87,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 9999;
     width: 100%;
     padding: 20px 0;
     background: #3f4040;
@@ -230,6 +238,7 @@ nav .menu button:active {
 /* header */
 
 /* main */
+/* first screen */
 .action {
     padding: 100px 0;
     background: #3f4040;
@@ -251,7 +260,7 @@ nav .menu button:active {
     }
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
     .action-wrap {
         text-align: left;
     }
@@ -291,25 +300,30 @@ nav .menu button:active {
     display: none;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
     .action-img {
         display: block;
     }
 }
 
+/* feature block */
 .feature {
     padding: 100px 0;
-    text-align: center;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .feature-item {
     padding: 30px 20px;
+    margin: 0 20px;
+    text-align: center;
     border-radius: 10px;
     transition: .3s;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 576px) {
     .feature {
         display: flex;
         text-align: left;
@@ -317,8 +331,9 @@ nav .menu button:active {
 
     .feature-item {
         display: flex;
-        max-width: 25%;
-        width: 100%;
+        flex-basis: 300px;
+        flex-grow: 1;
+        text-align: left;
     }
 }
 
@@ -340,6 +355,12 @@ nav .menu button:active {
     background: #3f4040;
     border-radius: 50%;
     transition: .3s;
+}
+
+@media screen and (min-width: 576px) {
+    .feature-icon {
+        margin: 0 0 20px;
+    }
 }
 
 .feature-item:hover .feature-icon,
@@ -381,19 +402,25 @@ nav .menu button:active {
     transition: .3s;
 }
 
+/* built block */
 .built {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding-top: 100px;
     padding-bottom: 100px;
 }
 
 .built-img {
-    display: none;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto 50px;
 }
 
 @media screen and (min-width: 992px) {
+    .built{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .built-img {
         max-width: 30%;
         width: 100%;
@@ -405,13 +432,6 @@ nav .menu button:active {
         width: 100%;
         padding-left: 100px;
     }
-}
-
-.built h2 {
-    font-size: 48px;
-    font-weight: 300;
-    padding-bottom: 20px;
-    text-align: center;
 }
 
 .built .text {
@@ -463,16 +483,10 @@ nav .menu button:active {
     font-weight: 300;
 }
 
+/* news block */
 .news {
     padding-top: 100px;
     padding-bottom: 100px;
-}
-
-.news h2 {
-    font-size: 48px;
-    font-weight: 300;
-    padding-bottom: 20px;
-    text-align: center;
 }
 
 .news .text {
@@ -484,21 +498,16 @@ nav .menu button:active {
 
 .news-list {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
-.news-list .item {    
-    width: 90%;
-    margin: 0 auto 20px;
+.news-list .item {
+    flex-basis: 300px;
+    flex-grow: 1;
+    margin: 20px;
     border: 1px solid #3f4040;
-}
-
-@media screen and (min-width: 768px) {
-    .news-list .item {
-        max-width: 30%;
-        margin: 0 10px;
-    }
 }
 
 .news-list .info {
@@ -525,6 +534,64 @@ nav .menu button:active {
     line-height: 2;
 }
 
+/* download block */
+.download {
+    padding: 100px 0;
+    background: #3f4040;
+}
+
+.download h2 {
+    color: #fff;
+}
+
+.download .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-group .btn {
+    /*display: block;*/
+    position: relative;
+    min-width: 220px;
+    padding: 10px 20px 10px 50px;
+    margin: 10px 20px;
+    font-size: 21px;
+    color: #3f4040;
+    font-weight: 300;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #fff;
+    transition: background .3s, color .3s;
+    cursor: pointer;
+}
+
+.btn-group .btn:hover,
+.btn-group .btn:active {
+    color: #fff;
+    background: #3f4040;
+}
+
+.btn-group .btn span {
+    display: block;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.btn-group .btn i {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    font-size: 24px;
+}
+
+.btn-app {
+
+}
+
+.btn-play {
+}
 /* main */
 
 /*footer*/
